@@ -6,9 +6,8 @@ using UnityEngine;
 public class EnvironmentChanges : MonoBehaviour {
 
     public GameObject music; //main music with properties to change
-    public GameObject spirit; //gameobject that does spirit effects
+    public GameObject particle; //gameobject that does particle effects
     public GameObject light; //main light with properties to change
-    public GameObject magic; //gameobject that does magic effects
 
     public float timer = 2f; // timer for each change (in sec)
 
@@ -33,11 +32,11 @@ public class EnvironmentChanges : MonoBehaviour {
         }
         else if(Input.GetKeyDown("u"))
         {
-            EnableSpirits();
+            EnableParticles();
         }
         else if(Input.GetKeyDown("i"))
         {
-            DisableSpirits();
+            DisableParticles();
         }
         else if(Input.GetKeyDown("o"))
         {
@@ -46,14 +45,6 @@ public class EnvironmentChanges : MonoBehaviour {
         else if(Input.GetKeyDown("p"))
         {
             SetLigherLight();
-        }
-        else if(Input.GetKeyDown("j"))
-        {
-            EnableMagic();
-        }
-        else if(Input.GetKeyDown("k"))
-        {
-            DisableMagic();
         }
     }
 
@@ -81,46 +72,23 @@ public class EnvironmentChanges : MonoBehaviour {
         StartCoroutine(_SetLigherLight());
     }
 
-    //Enable spirits effect
-    void EnableSpirits()
+    //Enable particles effect
+    void EnableParticles()
     {
-        spirit.SetActive(true);
-        ParticleSystem ps = spirit.GetComponent<ParticleSystem>();
+        particle.SetActive(true);
+        ParticleSystem ps = particle.GetComponent<ParticleSystem>();
         var emission = ps.emission;
         emission.enabled = true;
     }
 
-    //Disable spirits effect
-    void DisableSpirits()
+    //Disable particles effect
+    void DisableParticles()
     {
-        ParticleSystem ps = spirit.GetComponent<ParticleSystem>();
+        ParticleSystem ps = particle.GetComponent<ParticleSystem>();
         var emission = ps.emission;
         emission.enabled = false;
     }
 
-    //Enable magic effects
-    void EnableMagic()
-    {
-        ParticleSystem ps = magic.GetComponent<ParticleSystem>();
-        var emission = ps.emission;
-        emission.enabled = true;
-
-        SetBluerLight();
-
-        EnableSpirits();
-    }
-
-    //Disable magic effects
-    void DisableMagic()
-    {
-        ParticleSystem ps = magic.GetComponent<ParticleSystem>();
-        var emission = ps.emission;
-        emission.enabled = false;
-
-        SetLigherLight();
-
-        DisableSpirits();
-    }
 
     //Increase the Volume of the music by 0.1f
     IEnumerator _IncreaseMusicVolume() {
