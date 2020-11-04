@@ -1,6 +1,6 @@
 # UnderwaterVR
 
-The second virtual reality environment that I developed for my master's degree project in computer science (thesis). I can not put in the code since my project was in partnership with health institutes and companies.
+The second virtual reality environment that I developed for my master's degree project in computer science (thesis). I just put a tiny sample code here, as these are confidential issues. since my project was in partnership with health institutes and companies.
 
 I developped Underwater VR at the Heron Laboratory of the Department of Computer Science and Operations Research of the University of Montreal using C# with Unity3D 2017.1.4. It is a therapeutic virtual experience designed to relax and unwind.
 
