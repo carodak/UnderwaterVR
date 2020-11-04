@@ -8,7 +8,7 @@ public class EnvironmentChanges : MonoBehaviour {
     public GameObject music; //main music with properties to change
     public GameObject spirit; //gameobject that does spirit effects
     public GameObject light; //main light with properties to change
-    public GameObject magic; //gameobject that does magic effects (aura..)
+    public GameObject magic; //gameobject that does magic effects
 
     public float timer = 2f; // timer for each change (in sec)
 
@@ -98,7 +98,7 @@ public class EnvironmentChanges : MonoBehaviour {
         emission.enabled = false;
     }
 
-    //Enable magic effects i.e. aura on dauphin and luminous spheres
+    //Enable magic effects
     void EnableMagic()
     {
         ParticleSystem ps = magic.GetComponent<ParticleSystem>();
